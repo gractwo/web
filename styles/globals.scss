@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@600&family=Quicksand&display=swap");
+:root {
+	--black0: #121212;
+	--black1: #1a1a1a;
+	--black2: #2c2c2c;
+	--black3: #1d1d1d;
+	--white0: #eee;
+	--accent: #61f2ea;
+	--fonts-norm: "Quicksand", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	--fonts-bold: "Lexend", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	/*  */
+	--backdrop: var(--black0);
+	--color: var(--white0);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: var(--black0);
+	color: var(--color);
+	min-height: 100vh;
+	font-family: var(--fonts-norm);
+}
+h1,
+h2,
+h3 {
+	padding: 0.5rem 0;
+	font-family: var(--fonts-bold);
+}
+
+/* html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} */

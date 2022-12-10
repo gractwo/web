@@ -1,0 +1,39 @@
+.hero {
+	display: block;
+	width: 100%;
+	height: 28rem;
+	@media screen and (max-width: 800px) {
+		height: 20rem;
+	}
+	overflow: hidden;
+	position: relative;
+	border-left: none;
+	border-right: none;
+}
+.hero::before {
+	position: absolute;
+	content: "";
+	// we do a little heisenberg
+	background: url(https://media1.tenor.com/images/9e70091410c7b3dd14ecfa09e14aaed2/tenor.gif?itemid=11390952);
+	filter: blur(0.25rem) brightness(50%);
+	transform: scale(1.1);
+	background-size: cover;
+	background-position: 0 -14rem;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.heroinside {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.stats {
+	margin: 1rem 16rem;
+}

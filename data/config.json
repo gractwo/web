@@ -1,0 +1,80 @@
+{
+	"splashes": [
+		{
+			"body": "ona jest narysowana debilu",
+			"author": "jamesen"
+		},
+		{
+			"body": "idą jak surykatki na śmierć puszczone",
+			"author": "mollin"
+		},
+		{
+			"body": "jak spotkam stacha będziemy się napierdalać",
+			"author": "KuOlek"
+		},
+		{
+			"body": "to nie kwestia fetyszu, to kwestia prawa izraela",
+			"author": "stachowiak"
+		},
+		{
+			"body": "czemu ten szkielet ma oczy i czilluje",
+			"author": "stachowiak"
+		},
+		{
+			"body": "decymalizacja człowieka",
+			"author": "elephant / suoń"
+		},
+		{
+			"body": "pizdeczka... z całym szacunkiem",
+			"author": "bavil gravlax"
+		},
+		{
+			"body": "mam dwunastometrowego kija w dupie",
+			"author": "stachowiak"
+		},
+		{
+			"body": "pamięć wody o jabłku",
+			"author": "maciuś"
+		},
+		{
+			"body": "właśnie piszę biblię",
+			"author": "elephant / suoń"
+		},
+		{
+			"body": "bitwa o chromosom",
+			"author": "mollin"
+		}
+	],
+	"links": [
+		{
+			"name": "Discord",
+			"href": "https://discord.gg/NBXq95C",
+			"hrefalias": ["/discord", "/dsc", "/dc"],
+			"desc": "Nasz serwer na Discordzie!"
+		},
+		{
+			"name": "YouTube",
+			"href": "https://www.youtube.com/@gractwopl",
+			"hrefalias": ["/youtube", "/yt"],
+			"desc": "Nasz kanał na YouTubie!"
+		},
+		{
+			"name": "Twitter",
+			"href": "https://twitter.com/gractwo",
+			"hrefalias": ["/twitter", "/twt"],
+			"desc": "Nasz profil na Twitterze!"
+		},
+		{
+			"name": "GitHub",
+			"href": "https://github.com/gractwo",
+			"hrefalias": ["/github", "/gh"],
+			"desc": "Nasz org na GitHubie!"
+		},
+		{
+			"name": "Kod Źródłowy",
+			"href": "https://github.com/gractwo/gractwo-web",
+			"hrefalias": ["/source", "/oss"],
+			"desc": "Kod źródłowy naszej strony internetowej."
+		}
+	]
+}

@@ -1,0 +1,36 @@
+.nav {
+	display: flex;
+	background-color: var(--black1);
+	min-height: 4rem;
+}
+.link {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: inherit;
+	text-decoration: none;
+	padding: 0 2rem;
+	height: auto;
+	user-select: none;
+	&:hover {
+		background: var(--backdrop);
+		color: var(--color);
+	}
+}
+.profile {
+	margin-left: auto;
+	background: var(--color);
+	color: var(--backdrop);
+}
+.logo {
+	padding: 0 1rem;
+	transition-duration: 100ms;
+	user-select: none;
+	&:hover {
+		background: var(--backdrop);
+		cursor: pointer;
+	}
+	&:active {
+		transform: scale(1.1);
+	}
+}
