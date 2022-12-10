@@ -25,8 +25,15 @@ const PageIndex = () => {
 				</div>
 			</div>
 			<div className={styles.stats}>
-				<h1>Hello!</h1>
-				<p>This is the index test page.</p>
+				<h1>Hejo!</h1>
+				<p>
+					Gractwo istnieje od{" "}
+					{Math.floor(
+						// (Date.now() - new Date("06.07.2020").getTime()) / 86400000
+						(Date.now() - new Date("2020-07-06").getTime()) / 86400000
+					)}
+					{" dni"}.
+				</p>
 			</div>
 		</>
 	);
