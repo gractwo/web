@@ -34,3 +34,18 @@
 		transform: scale(1.1);
 	}
 }
+
+.mobile {
+	display: none;
+}
+@media screen and (max-width: 800px) {
+	.nav {
+		min-height: 3rem;
+	}
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: inherit;
+	}
+}
