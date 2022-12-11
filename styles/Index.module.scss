@@ -37,3 +37,9 @@
 		transform: scale(0.85);
 	}
 }
+.h1clicktorefreshsplash {
+	user-select: none;
+	&:hover {
+		cursor: pointer;
+	}
+}
