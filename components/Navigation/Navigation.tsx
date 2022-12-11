@@ -1,8 +1,9 @@
 import styles from "./Navigation.module.scss";
 import { GractwoLogo } from "../Logo";
-import Link from "next/link";
+import { Icon, IconSet } from "../Icon";
 
 import navigation from "../../data/navigation.json";
+import Link from "next/link";
 
 const Navigation = () => {
 	let username: string = "";
@@ -25,8 +26,7 @@ const Navigation = () => {
 					);
 				})}
 				<div tabIndex={0} className={`${styles.dropdown} ${styles.mobile}`}>
-					<GractwoLogo width={48} height={48} />
-					nawigacja
+					<Icon icon={IconSet.Menu} />
 					{/* TUTAJ WSTAWIĆ IKONKĘ PÓŹNIEJ */}
 					<div className={styles.innerdropdown}>
 						{navigation.map((navlink) => {
