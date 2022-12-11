@@ -53,4 +53,4 @@ const GractwoLogo = ({ width, height, ...props }: logoprops) => {
 	);
 };
 
-export default GractwoLogo;
+export { GractwoLogo };
