@@ -2,6 +2,9 @@
 	display: flex;
 	background-color: var(--black1);
 	height: 4rem;
+	position: relative;
+	z-index: 10;
+	box-shadow: var(--shadow0);
 }
 .link {
 	display: flex;

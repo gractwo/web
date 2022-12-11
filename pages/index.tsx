@@ -31,16 +31,26 @@ const PageIndex = () => {
 					<p>Warto naznaczyć, że strona jest w trakcie remontu.</p>
 				</div>
 			</div>
-			<main>
-				<h1>Hejo!</h1>
-				<p>
-					Gractwo istnieje od{" "}
-					{Math.floor(
-						(Date.now() - new Date("2020-07-06").getTime()) / 86400000
-					)}{" "}
-					dni.
-				</p>
-			</main>
+			<div className={styles.statscontainer}>
+				<main className={styles.stats}>
+					<article>
+						<h1>~200</h1>
+						<p>członków na discordzie</p>
+					</article>
+					<article>
+						<h1>
+							{Math.floor(
+								(Date.now() - new Date("2020-07-06").getTime()) / 86400000
+							)}
+						</h1>
+						<p>dni istnienia gractwa</p>
+					</article>
+					<article>
+						<h1>dużo</h1>
+						<p>wysłanych wiadomości</p>
+					</article>
+				</main>
+			</div>
 		</>
 	);
 };
