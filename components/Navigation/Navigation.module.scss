@@ -1,7 +1,7 @@
 .nav {
 	display: flex;
 	background-color: var(--black1);
-	min-height: 4rem;
+	height: 4rem;
 }
 .link {
 	display: flex;
@@ -35,12 +35,48 @@
 	}
 }
 
+.dropdown {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	color: inherit;
+	text-decoration: none;
+	padding: 0 2rem;
+	height: auto;
+	user-select: none;
+	position: relative;
+	&:hover {
+		background: var(--backdrop);
+		color: var(--color);
+	}
+	.innerdropdown {
+		display: none;
+		position: absolute;
+		top: 3rem;
+		left: 0;
+		z-index: 100;
+		min-width: 16rem;
+		background: var(--black1);
+		.link {
+			padding: 1rem 2rem;
+		}
+	}
+	&:hover,
+	&:focus-within {
+		.innerdropdown {
+			display: block;
+		}
+	}
+}
+
 .mobile {
 	display: none;
 }
+
 @media screen and (max-width: 800px) {
 	.nav {
-		min-height: 3rem;
+		height: 3rem;
 	}
 	.desktop {
 		display: none;
@@ -49,3 +85,11 @@
 		display: inherit;
 	}
 }
+
+/* FOR TESTING MOBILE NAV WITHOUT DEVTOOLS */
+// .desktop {
+// 	display: none;
+// }
+// .mobile {
+// 	display: inherit;
+// }
