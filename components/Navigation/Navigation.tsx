@@ -2,7 +2,7 @@ import styles from "./Navigation.module.scss";
 import { GractwoLogo } from "../Logo";
 import Link from "next/link";
 
-import config from "../../data/config.json";
+import navigation from "../../data/navigation.json";
 
 const Navigation = () => {
 	let username: string = "";
@@ -10,7 +10,7 @@ const Navigation = () => {
 		<>
 			<div className={styles.nav}>
 				<GractwoLogo className={`${styles.logo} ${styles.desktop}`} />
-				{config.navigation.map((navlink) => {
+				{navigation.map((navlink) => {
 					return (
 						<Link
 							key={`desktop${navlink.href}`}
@@ -26,7 +26,7 @@ const Navigation = () => {
 					nawigacja
 					{/* TUTAJ WSTAWIĆ IKONKĘ PÓŹNIEJ */}
 					<div className={styles.innerdropdown}>
-						{config.navigation.map((navlink) => {
+						{navigation.map((navlink) => {
 							return (
 								<Link
 									key={`mobile${navlink.href}`}

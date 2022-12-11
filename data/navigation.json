@@ -1,0 +1,18 @@
+[
+	{
+		"name": "główna",
+		"href": "/"
+	},
+	{
+		"name": "o gractwie",
+		"href": "/o-gractwie"
+	},
+	{
+		"name": "cytaty",
+		"href": "/cytaty"
+	},
+	{
+		"name": "rankingi",
+		"href": "/rankingi"
+	}
+]

@@ -2,14 +2,12 @@ import styles from "../styles/Index.module.scss";
 
 import { useEffect, useState } from "react";
 import { SEO } from "../components/SEO";
-import config from "../data/config.json";
+import splashes from "../data/splashes.json";
 
 const PageIndex = () => {
 	const [splash, setSplash] = useState("");
 	function randomizeSplash(): void {
-		setSplash(
-			config.splashes[Math.floor(Math.random() * config.splashes.length)].body
-		);
+		setSplash(splashes[Math.floor(Math.random() * splashes.length)].body);
 	}
 	useEffect(() => {
 		randomizeSplash();

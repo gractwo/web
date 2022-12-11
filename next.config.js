@@ -1,4 +1,4 @@
-const { links } = require("./data/config.json");
+const links = require("./data/links.json");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
