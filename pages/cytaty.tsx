@@ -4,7 +4,7 @@ const PageCytaty = () => {
 	return (
 		<>
 			<SEO title="cytaty" />
-			Miejsce na stronkę od cytatów.
+			<main>Miejsce na stronkę od cytatów.</main>
 		</>
 	);
 };

@@ -4,7 +4,7 @@ const PageRankingi = () => {
 	return (
 		<>
 			<SEO title="rankingi" />
-			Miejsce na stronkę od rankingów.
+			<main>Miejsce na stronkę od rankingów.</main>
 		</>
 	);
 };

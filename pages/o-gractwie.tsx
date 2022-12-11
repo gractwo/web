@@ -4,7 +4,7 @@ const PageInfo = () => {
 	return (
 		<>
 			<SEO title="o gractwie" />
-			Miejsce na stronkę od informacji nt. Gractwa.
+			<main>Miejsce na stronkę od informacji nt. Gractwa.</main>
 		</>
 	);
 };
