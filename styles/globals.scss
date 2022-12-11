@@ -26,11 +26,6 @@ body {
 	color: var(--color);
 	min-height: 100vh;
 	font-family: var(--fonts-norm);
-	display: flex;
-	flex-direction: column;
-	.footer {
-		justify-self: end;
-	}
 }
 h1,
 h2,

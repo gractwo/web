@@ -8,9 +8,22 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<SEO />
-			<Navigation />
-			<Component {...pageProps} />
-			<Footer />
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+					minHeight: "100vh",
+				}}
+			>
+				<div>
+					<Navigation />
+					<Component {...pageProps} />
+				</div>
+				<div>
+					<Footer />
+				</div>
+			</div>
 		</>
 	);
 }
