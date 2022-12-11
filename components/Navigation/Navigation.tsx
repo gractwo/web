@@ -21,7 +21,7 @@ const Navigation = () => {
 						</Link>
 					);
 				})}
-				<Link href="" className={`${styles.dropdown} ${styles.mobile}`}>
+				<div tabIndex={0} className={`${styles.dropdown} ${styles.mobile}`}>
 					<GractwoLogo width={48} height={48} />
 					nawigacja
 					{/* TUTAJ WSTAWIĆ IKONKĘ PÓŹNIEJ */}
@@ -38,7 +38,7 @@ const Navigation = () => {
 							);
 						})}
 					</div>
-				</Link>
+				</div>
 				<Link
 					href=""
 					style={{ display: "flex" }}
