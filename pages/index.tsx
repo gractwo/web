@@ -1,8 +1,9 @@
 import styles from "../styles/Index.module.scss";
-
 import { useEffect, useState } from "react";
 import { SEO } from "../components/SEO";
+import { Icon, IconSet } from "../components/Icon";
 import splashes from "../data/splashes.json";
+import Link from "next/link";
 
 const PageIndex = () => {
 	const [splash, setSplash] = useState("");
@@ -49,6 +50,20 @@ const PageIndex = () => {
 					</article>
 				</main>
 			</div>
+			<main className={styles.chips}>
+				<Link href="/discord" className={styles.chip}>
+					discord <Icon icon={IconSet.MessageSquare} />
+				</Link>
+				<Link href="/youtube" className={styles.chip}>
+					youtube <Icon icon={IconSet.YouTube} />
+				</Link>
+				<Link href="/twitter" className={styles.chip}>
+					twitter <Icon icon={IconSet.Twitter} />
+				</Link>
+				<Link href="/github" className={styles.chip}>
+					github <Icon icon={IconSet.GitHub} />
+				</Link>
+			</main>
 		</>
 	);
 };
