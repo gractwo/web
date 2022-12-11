@@ -1,20 +1,15 @@
 import styles from "./Navigation.module.scss";
-import GractwoLogo from "../logo";
+import { GractwoLogo } from "../Logo";
 import Link from "next/link";
 
 import config from "../../data/config.json";
 
-const PageNavigation = () => {
+const Navigation = () => {
 	let username: string = "";
 	return (
 		<>
 			<div className={styles.nav}>
 				<GractwoLogo className={`${styles.logo} ${styles.desktop}`} />
-				{/* <GractwoLogo
-					width={48}
-					height={48}
-					className={`${styles.logo} ${styles.mobile}`}
-				/> */}
 				{config.navigation.map((navlink) => {
 					return (
 						<Link
@@ -45,4 +40,4 @@ const PageNavigation = () => {
 	);
 };
 
-export default PageNavigation;
+export { Navigation };

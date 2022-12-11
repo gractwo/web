@@ -6,7 +6,7 @@ type seoprops = {
 	description?: string;
 };
 
-const ComponentSEO = ({ title, noatsign, description }: seoprops) => {
+const SEO = ({ title, noatsign, description }: seoprops) => {
 	const defaultDescription = "Witryna internetowa Gractwa.";
 	return (
 		<Head>
@@ -19,4 +19,4 @@ const ComponentSEO = ({ title, noatsign, description }: seoprops) => {
 	);
 };
 
-export default ComponentSEO;
+export { SEO };

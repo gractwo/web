@@ -1,7 +1,7 @@
 import styles from "../styles/Index.module.scss";
 
 import { useEffect, useState } from "react";
-import SEO from "../components/SEO";
+import { SEO } from "../components/SEO";
 import config from "../data/config.json";
 
 const PageIndex = () => {
