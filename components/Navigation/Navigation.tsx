@@ -9,7 +9,10 @@ const Navigation = () => {
 	return (
 		<>
 			<div className={styles.nav}>
-				<GractwoLogo className={`${styles.logo} ${styles.desktop}`} />
+				<GractwoLogo
+					width={96}
+					className={`${styles.logo} ${styles.desktop}`}
+				/>
 				{navigation.map((navlink) => {
 					return (
 						<Link

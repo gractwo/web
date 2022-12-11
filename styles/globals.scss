@@ -19,12 +19,18 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 body {
 	background-color: var(--black0);
 	color: var(--color);
 	min-height: 100vh;
 	font-family: var(--fonts-norm);
+	display: flex;
+	flex-direction: column;
+	.footer {
+		justify-self: end;
+	}
 }
 h1,
 h2,
