@@ -4,6 +4,7 @@ import { SEO } from "../components/SEO";
 import { Icon, IconSet } from "../components/Icon";
 import splashes from "../data/splashes.json";
 import Link from "next/link";
+import { IndexGallery } from "../components/IndexGallery/IndexGallery";
 
 const PageIndex = () => {
 	const [splash, setSplash] = useState("");
@@ -64,6 +65,7 @@ const PageIndex = () => {
 					github <Icon icon={IconSet.GitHub} />
 				</Link>
 			</main>
+			<IndexGallery />
 		</>
 	);
 };
