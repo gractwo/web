@@ -53,7 +53,7 @@ const PageIndex = () => {
 			</div>
 			<main className={styles.chips}>
 				<Link href="/discord" className={styles.chip}>
-					discord <Icon icon={IconSet.MessageSquare} />
+					discord <Icon icon={IconSet.Discord} />
 				</Link>
 				<Link href="/youtube" className={styles.chip}>
 					youtube <Icon icon={IconSet.YouTube} />
