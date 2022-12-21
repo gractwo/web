@@ -51,7 +51,9 @@ const PageInfo = () => {
 						return (
 							<Link
 								key={el.name}
-								href={el.profilehref ? `/profile/${el.profilehref}` : ""}
+								href={`/profile/${el.name
+									.replaceAll(" ", "-")
+									.toLocaleLowerCase()}`}
 							>
 								<article>
 									<img src={el.img} alt={`zdjęcie profilowe ${el.name}`} />
