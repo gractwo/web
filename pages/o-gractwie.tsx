@@ -22,8 +22,9 @@ const PageInfo = () => {
 							Gractwo jest nieformalną organizacją i społecznością osób
 							zainteresowanych grami, anime, popkulturą. Powstałe w 2020 roku
 							jest zreszeniem ludzi w dużej mierze znających się nawzajem i
-							spędzających razem „na Gractwie” czas. Genezą nazwy jest złączenie
-							słów „Gracz” i „Bractwo”.
+							spędzających razem „na Gractwie” czas.
+							{/* Genezą nazwy jest złączenie słów „Gracz” i „Bractwo”. */}
+							{/*  */}
 							{/* discordowa społeczność kryptogenshinowa która jest yyy często
 							charakteryzuje się łączeniem przez relacje interpersonalne
 							kluczowych członków, chyba że jeszcze bardziej chcemy ukrywać
@@ -48,13 +49,18 @@ const PageInfo = () => {
 				<div className={styles.persons}>
 					{administracja.map((el) => {
 						return (
-							<article>
-								<img src={el.img} alt={`zdjęcie profilowe ${el.name}`} />
-								<div>
-									<h3>{el.name}</h3>
-									<p>{el.desc || "brak opisu."}</p>
-								</div>
-							</article>
+							<Link
+								key={el.name}
+								href={el.profilehref ? `/profile/${el.profilehref}` : ""}
+							>
+								<article>
+									<img src={el.img} alt={`zdjęcie profilowe ${el.name}`} />
+									<div>
+										<h3>{el.name}</h3>
+										<p>{el.desc || "brak opisu."}</p>
+									</div>
+								</article>
+							</Link>
 						);
 					})}
 				</div>
