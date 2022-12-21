@@ -8,12 +8,26 @@ import { IndexGallery } from "../components/IndexGallery/IndexGallery";
 
 const PageIndex = () => {
 	const [splash, setSplash] = useState("");
+	const [memberCount, setMemberCount] = useState("");
 	function randomizeSplash(): void {
 		setSplash(splashes[Math.floor(Math.random() * splashes.length)].body);
 	}
 	useEffect(() => {
 		randomizeSplash();
 	}, []);
+	useEffect(() => {
+		fetch("https://gractwo.pl/api/members")
+			.then((res) => {
+				return res.text();
+			})
+			.then((data) => {
+				console.log(data);
+				setMemberCount(data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	});
 	const welcometext: string = "Witamy na witrynie internetowej Gractwa."; // Mamy nadzieję że odnajdziesz czego szukasz, zbłąkana duszo.";
 	return (
 		<>
@@ -34,7 +48,7 @@ const PageIndex = () => {
 			<div className={styles.statscontainer}>
 				<main className={styles.stats}>
 					<article>
-						<h1>~200</h1>
+						<h1>{memberCount || "∞"}</h1>
 						<p>członków na discordzie</p>
 					</article>
 					<article>
