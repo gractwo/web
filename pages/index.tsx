@@ -21,7 +21,6 @@ const PageIndex = () => {
 				return res.text();
 			})
 			.then((data) => {
-				console.log(data);
 				setMemberCount(data);
 			})
 			.catch((err) => {
@@ -41,8 +40,6 @@ const PageIndex = () => {
 						&bdquo;{splash || "..."}&rdquo;
 					</h1>
 					<p>{welcometext}</p>
-					<br />
-					<p>Warto naznaczyć, że strona jest w trakcie remontu.</p>
 				</div>
 			</div>
 			<div className={styles.statscontainer}>
@@ -65,17 +62,17 @@ const PageIndex = () => {
 					</article>
 				</main>
 			</div>
-			<main className={styles.chips}>
-				<Link href="/discord" className={styles.chip}>
+			<main className="chips">
+				<Link href="/discord" className="chip">
 					discord <Icon icon={IconSet.Discord} />
 				</Link>
-				<Link href="/youtube" className={styles.chip}>
+				<Link href="/youtube" className="chip">
 					youtube <Icon icon={IconSet.YouTube} />
 				</Link>
-				<Link href="/twitter" className={styles.chip}>
+				<Link href="/twitter" className="chip">
 					twitter <Icon icon={IconSet.Twitter} />
 				</Link>
-				<Link href="/github" className={styles.chip}>
+				<Link href="/github" className="chip">
 					github <Icon icon={IconSet.GitHub} />
 				</Link>
 			</main>

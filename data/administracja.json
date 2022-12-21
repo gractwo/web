@@ -1,0 +1,32 @@
+[
+	{
+		"name": "jamesen",
+		"desc": "Frontendowiec nie jebany.",
+		"img": "https://pbs.twimg.com/profile_images/1605591811921149953/Ogr8ALPa_400x400.jpg"
+	},
+	{
+		"name": "Mollin",
+		"desc": "Porucznik Essy.",
+		"img": "https://scontent.fpoz3-1.fna.fbcdn.net/v/t39.30808-6/310691519_1360386137823083_6441534118963998218_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nmArlTkhFvYAX9VQJc3&_nc_ht=scontent.fpoz3-1.fna&oh=00_AfC6DiffR_3d4apR8EB-Mq7OAms46MygDluvUM9qn6h1yQ&oe=63A73BC3"
+	},
+	{
+		"name": "Elephant",
+		"desc": "Osobnik demencyjny.",
+		"img": "https://scontent.fpoz3-1.fna.fbcdn.net/v/t39.30808-6/311286331_1301953777209022_2921346369745668199_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=C4Zk591EV6kAX9t5DFj&_nc_ht=scontent.fpoz3-1.fna&oh=00_AfBPI8OYZAoBS3H5ZCIV8-5rpcnYYWcAjq7EcxyZmGUSjg&oe=63A80F4A"
+	},
+	{
+		"name": "Dzioba",
+		"desc": "Backendowiec jebany.",
+		"img": "https://avatars.githubusercontent.com/u/62724833?v=4"
+	},
+	{
+		"name": "KuOlek",
+		"desc": "Duch. (bo go nie ma)",
+		"img": "https://scontent.fpoz3-1.fna.fbcdn.net/v/t39.30808-6/289371411_1715545058798551_2853229246533249138_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=ljBd8O9-PfYAX91OEf_&_nc_ht=scontent.fpoz3-1.fna&oh=00_AfCr0jhihBgN8aqMrG2EbwNCjvPTpPbsOmvfD6kxuv7zbA&oe=63A7E121"
+	},
+	{
+		"name": "Bavil Gravlax",
+		"desc": "Śpiący rękawek.",
+		"img": "https://media.discordapp.net/attachments/795744664556535809/1055159702880784556/Awatar.jpg?width=657&height=657"
+	}
+]
