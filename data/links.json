@@ -24,6 +24,10 @@
 		"desc": "Nasz org na GitHubie!"
 	},
 	{
+		"href": "/o-gractwie#sklad-administracji",
+		"hrefalias": ["/profile"]
+	},
+	{
 		"name": "Kod Źródłowy",
 		"href": "https://github.com/gractwo/gractwo-web",
 		"hrefalias": ["/source", "/oss"],
