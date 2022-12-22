@@ -3,6 +3,7 @@ import { SEO } from "../components/SEO";
 import styles from "../styles/oGractwie.module.scss";
 import Link from "next/link";
 import { Icon } from "../components/Icon";
+import { iconselection } from "../components/Icon";
 import administracja from "../data/administracja.json";
 import links from "../data/links.json";
 
@@ -75,6 +76,7 @@ const PageInfo = () => {
 							return (
 								<Link className="chip" key={el.name} href={el.href}>
 									{el.name}
+									{el.icon ? <Icon icon={el.icon as iconselection} /> : ""}
 								</Link>
 							);
 						}

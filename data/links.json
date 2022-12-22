@@ -3,25 +3,29 @@
 		"name": "Discord",
 		"href": "https://discord.gg/NBXq95C",
 		"hrefalias": ["/discord", "/dsc", "/dc"],
-		"desc": "Nasz serwer na Discordzie!"
+		"desc": "Nasz serwer na Discordzie!",
+		"icon": "Discord"
 	},
 	{
 		"name": "YouTube",
 		"href": "https://www.youtube.com/@gractwopl",
 		"hrefalias": ["/youtube", "/yt"],
-		"desc": "Nasz kanał na YouTubie!"
+		"desc": "Nasz kanał na YouTubie!",
+		"icon": "YouTube"
 	},
 	{
 		"name": "Twitter",
 		"href": "https://twitter.com/gractwo",
 		"hrefalias": ["/twitter", "/twt"],
-		"desc": "Nasz profil na Twitterze!"
+		"desc": "Nasz profil na Twitterze!",
+		"icon": "Twitter"
 	},
 	{
 		"name": "GitHub",
 		"href": "https://github.com/gractwo",
 		"hrefalias": ["/github", "/gh"],
-		"desc": "Nasz org na GitHubie!"
+		"desc": "Nasz org na GitHubie!",
+		"icon": "GitHub"
 	},
 	{
 		"href": "/o-gractwie#sklad-administracji",
@@ -31,6 +35,7 @@
 		"name": "Kod Źródłowy",
 		"href": "https://github.com/gractwo/gractwo-web",
 		"hrefalias": ["/source", "/oss"],
-		"desc": "Kod źródłowy naszej strony internetowej."
+		"desc": "Kod źródłowy naszej strony internetowej.",
+		"icon": "Code"
 	}
 ]
