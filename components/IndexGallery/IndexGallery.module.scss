@@ -2,26 +2,29 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	// justify-content: space-between;
 	@media screen and (max-width: 800px) {
 		flex-direction: column;
 		align-items: center;
 	}
-	gap: 1.5rem;
+	gap: 2rem;
 	.galleryimg {
 		--mheight: 18rem;
 		position: relative;
+		display: block;
 		margin: 0;
 		padding: 0;
 		max-height: var(--mheight);
 		@media screen and (max-width: 800px) {
 			text-decoration: none;
+			max-height: none;
+			text-align: center;
 		}
 		img {
 			max-height: var(--mheight);
 			border-radius: 8px;
 			@media screen and (max-width: 800px) {
-				max-width: 250px;
+				max-width: 280px;
 			}
 		}
 		article {
@@ -32,19 +35,18 @@
 			left: 0;
 			bottom: 0;
 			width: 100%;
-			display: flex;
-			flex-direction: row;
-			align-items: baseline;
-			justify-content: space-between;
 			padding: 0.25rem 0.5rem;
 			border-radius: 8px;
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			transition-duration: 100ms;
 			opacity: 0;
+			p {
+				margin-bottom: 4px;
+			}
 			@media screen and (max-width: 800px) {
 				display: block;
-				position: unset;
+				position: relative;
 				background: unset;
 				color: var(--white0);
 				padding: 0;
