@@ -61,6 +61,11 @@ const PageInfo = () => {
 									<div>
 										<h3>{el.name}</h3>
 										<p>{el.desc || "brak opisu."}</p>
+										{el.devBadge ? (
+											<span className={styles.devBadge}>DEV</span>
+										) : (
+											""
+										)}
 									</div>
 								</article>
 							</Link>
