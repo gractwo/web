@@ -33,7 +33,7 @@ const PageInfo = () => {
 						</p>
 					</article>
 				</div>
-				{/* <div className="chips">
+				<div className="chips">
 					<Link href="#sklad-administracji" className="chip">
 						skład administracji
 						<Icon icon={IconSet.Users} />
@@ -42,7 +42,7 @@ const PageInfo = () => {
 						linki i przekierowania
 						<Icon icon={IconSet.Link2} />
 					</Link>
-				</div> */}
+				</div>
 			</main>
 			<main id="sklad-administracji">
 				<h2>skład administracji</h2>
@@ -67,18 +67,20 @@ const PageInfo = () => {
 					})}
 				</div>
 			</main>
-			{/* <main id="linki">
+			<main id="linki">
 				<h2>linki i przekierowania</h2>
 				<div className="chips">
 					{links.map((el) => {
-						return (
-							<Link className="chip" href={el.href}>
-								{el.name}
-							</Link>
-						);
+						if (el.name) {
+							return (
+								<Link className="chip" key={el.name} href={el.href}>
+									{el.name}
+								</Link>
+							);
+						}
 					})}
 				</div>
-			</main> */}
+			</main>
 		</>
 	);
 };
