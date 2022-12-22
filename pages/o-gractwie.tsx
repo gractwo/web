@@ -2,7 +2,7 @@ import { GractwoLogo } from "../components/Logo";
 import { SEO } from "../components/SEO";
 import styles from "../styles/oGractwie.module.scss";
 import Link from "next/link";
-import { Icon, IconSet } from "../components/Icon";
+import { Icon } from "../components/Icon";
 import administracja from "../data/administracja.json";
 import links from "../data/links.json";
 
@@ -36,11 +36,11 @@ const PageInfo = () => {
 				<div className="chips">
 					<Link href="#sklad-administracji" className="chip">
 						skład administracji
-						<Icon icon={IconSet.Users} />
+						<Icon icon="Users" />
 					</Link>
 					<Link href="#linki" className="chip">
 						linki i przekierowania
-						<Icon icon={IconSet.Link2} />
+						<Icon icon="Link2" />
 					</Link>
 				</div>
 			</main>
