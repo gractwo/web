@@ -1,7 +1,7 @@
 import styles from "../styles/Index.module.scss";
 import { useEffect, useState } from "react";
 import { SEO } from "../components/SEO";
-import { Icon, IconSet } from "../components/Icon";
+import { Icon } from "../components/Icon";
 import splashes from "../data/splashes.json";
 import Link from "next/link";
 import { IndexGallery } from "../components/IndexGallery/IndexGallery";
@@ -21,7 +21,6 @@ const PageIndex = () => {
 				return res.text();
 			})
 			.then((data) => {
-				console.log(data);
 				setMemberCount(data);
 			})
 			.catch((err) => {
@@ -41,8 +40,6 @@ const PageIndex = () => {
 						&bdquo;{splash || "..."}&rdquo;
 					</h1>
 					<p>{welcometext}</p>
-					<br />
-					<p>Warto naznaczyć, że strona jest w trakcie remontu.</p>
 				</div>
 			</div>
 			<div className={styles.statscontainer}>
@@ -65,18 +62,18 @@ const PageIndex = () => {
 					</article>
 				</main>
 			</div>
-			<main className={styles.chips}>
-				<Link href="/discord" className={styles.chip}>
-					discord <Icon icon={IconSet.Discord} />
+			<main className="chips">
+				<Link href="/discord" className="chip">
+					discord <Icon icon="Discord" />
 				</Link>
-				<Link href="/youtube" className={styles.chip}>
-					youtube <Icon icon={IconSet.YouTube} />
+				<Link href="/youtube" className="chip">
+					youtube <Icon icon="YouTube" />
 				</Link>
-				<Link href="/twitter" className={styles.chip}>
-					twitter <Icon icon={IconSet.Twitter} />
+				<Link href="/twitter" className="chip">
+					twitter <Icon icon="Twitter" />
 				</Link>
-				<Link href="/github" className={styles.chip}>
-					github <Icon icon={IconSet.GitHub} />
+				<Link href="/github" className="chip">
+					github <Icon icon="GitHub" />
 				</Link>
 			</main>
 			<IndexGallery />

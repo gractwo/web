@@ -39,3 +39,39 @@ main {
 	margin: 0 auto;
 	padding: 1rem;
 }
+
+.chips {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.chip {
+	display: inline-flex;
+	text-decoration: none;
+	gap: 0.5rem;
+	align-items: center;
+	color: inherit;
+	padding: 6px 8px;
+	border: 1px solid var(--grey);
+	border-radius: 8px;
+	transition-duration: 100ms;
+	text-rendering: geometricPrecision;
+	// font-family: var(--fonts-bold);
+	// color: var(--grey);
+	svg {
+		color: var(--grey);
+	}
+	&:hover,
+	&:focus {
+		outline: none;
+		background: var(--black1);
+		border: 1px solid var(--black1);
+		box-shadow: var(--shadow0);
+		transform: scale(1.1);
+		svg {
+			color: var(--color);
+		}
+	}
+}
