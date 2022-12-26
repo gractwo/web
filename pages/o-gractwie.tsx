@@ -4,10 +4,31 @@ import styles from "../styles/oGractwie.module.scss";
 import Link from "next/link";
 import { Icon } from "../components/Icon";
 import { iconselection } from "../components/Icon";
-import administracja from "../data/administracja.json";
 import links from "../data/links.json";
+import { useEffect, useState } from "react";
 
 const PageInfo = () => {
+	const [adminList, setAdminList] = useState([]);
+	type apiResType = {
+		Id: string;
+		Name: string;
+		Desc: string;
+		Img: string;
+		DevBadge: string;
+		AssignedUser: string;
+	};
+	useEffect(() => {
+		fetch("https://gractwo.pl/api/v1/admincards")
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setAdminList(data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
 	return (
 		<>
 			<SEO title="o gractwie" />
@@ -48,20 +69,21 @@ const PageInfo = () => {
 			<main id="sklad-administracji">
 				<h2>skład administracji</h2>
 				<div className={styles.persons}>
-					{administracja.map((el) => {
+					{adminList.map((el: apiResType) => {
 						return (
 							<Link
-								key={el.name}
-								href={`/profile/${el.name
-									.replaceAll(" ", "-")
-									.toLocaleLowerCase()}`}
+								key={el.Id}
+								href={`/profile/${el.Name.replaceAll(
+									" ",
+									"-"
+								).toLocaleLowerCase()}`}
 							>
 								<article>
-									<img src={el.img} alt={`zdjęcie profilowe ${el.name}`} />
+									<img src={el.Img} alt={`zdjęcie profilowe ${el.Name}`} />
 									<div>
-										<h3>{el.name}</h3>
-										<p>{el.desc || "brak opisu."}</p>
-										{el.devBadge ? (
+										<h3>{el.Name}</h3>
+										<p>{el.Desc || "brak opisu."}</p>
+										{el.DevBadge ? (
 											<span className={styles.devBadge}>DEV</span>
 										) : (
 											""
