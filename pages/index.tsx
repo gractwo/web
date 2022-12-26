@@ -2,7 +2,6 @@ import styles from "../styles/Index.module.scss";
 import { useEffect, useState } from "react";
 import { SEO } from "../components/SEO";
 import { Icon } from "../components/Icon";
-import splashes from "../data/splashes.json";
 import Link from "next/link";
 import { IndexGallery } from "../components/IndexGallery/IndexGallery";
 
@@ -10,12 +9,20 @@ const PageIndex = () => {
 	const [splash, setSplash] = useState("");
 	const [memberCount, setMemberCount] = useState("");
 	function randomizeSplash(): void {
-		setSplash(splashes[Math.floor(Math.random() * splashes.length)].body);
+		fetch("https://gractwo.pl/api/v1/splash")
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				console.log(data);
+				setSplash(data.Splash);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	}
 	useEffect(() => {
 		randomizeSplash();
-	}, []);
-	useEffect(() => {
 		fetch("https://gractwo.pl/api/members")
 			.then((res) => {
 				return res.text();
@@ -26,7 +33,7 @@ const PageIndex = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	});
+	}, []);
 	const welcometext: string = "Witamy na witrynie internetowej Gractwa."; // Mamy nadzieję że odnajdziesz czego szukasz, zbłąkana duszo.";
 	return (
 		<>
