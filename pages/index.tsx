@@ -14,7 +14,6 @@ const PageIndex = () => {
 				return res.json();
 			})
 			.then((data) => {
-				console.log(data);
 				setSplash(data.Splash);
 			})
 			.catch((err) => {
