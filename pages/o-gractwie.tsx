@@ -73,7 +73,7 @@ const PageInfo = () => {
 						return (
 							<Link
 								key={el.Id}
-								href={`/profile/${el.Name.replaceAll(
+								href={`/profil/${el.Name.replaceAll(
 									" ",
 									"-"
 								).toLocaleLowerCase()}`}
