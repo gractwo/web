@@ -32,6 +32,10 @@
 		"hrefalias": ["/profil"]
 	},
 	{
+		"href": "https://youtu.be/NNv2RHR62Rs",
+		"hrefalias": ["/pgtf-theme"]
+	},
+	{
 		"name": "Kod Źródłowy",
 		"href": "https://github.com/gractwo/gractwo-web",
 		"hrefalias": ["/source", "/oss"],
