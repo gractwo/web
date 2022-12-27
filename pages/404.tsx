@@ -1,9 +1,13 @@
 import { SEO } from "../components/SEO";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const PageError404 = () => {
 	const router = useRouter();
+	const [badPath, setBadPath] = useState("");
+	useEffect(() => {
+		setBadPath(router.asPath);
+	}, [router.asPath]);
 	return (
 		<>
 			<SEO title="404" />
@@ -33,7 +37,7 @@ const PageError404 = () => {
 					</p>
 				</div>
 			</div>
-			<div style={{ textAlign: "center", lineHeight: "1.5rem" }}>
+			<p style={{ textAlign: "center", lineHeight: "1.5rem" }}>
 				<span
 					style={{
 						padding: "4px",
@@ -42,10 +46,10 @@ const PageError404 = () => {
 						boxShadow: "var(--shadow0)",
 					}}
 				>
-					{useRouter().asPath}
+					{badPath}
 				</span>{" "}
 				nie jest poprawnym adresem.
-			</div>
+			</p>
 		</>
 	);
 };
