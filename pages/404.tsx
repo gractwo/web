@@ -33,7 +33,7 @@ const PageError404 = () => {
 					</p>
 				</div>
 			</div>
-			<p style={{ textAlign: "center", lineHeight: "1.5rem" }}>
+			<div style={{ textAlign: "center", lineHeight: "1.5rem" }}>
 				<span
 					style={{
 						padding: "4px",
@@ -45,7 +45,7 @@ const PageError404 = () => {
 					{useRouter().asPath}
 				</span>{" "}
 				nie jest poprawnym adresem.
-			</p>
+			</div>
 		</>
 	);
 };
