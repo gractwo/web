@@ -107,3 +107,22 @@
 		}
 	}
 }
+.funfact {
+	display: block;
+	text-align: right;
+	width: 100%;
+	background: var(--black1);
+	padding: 16px 0;
+	margin: 16px 0;
+	border-radius: 8px;
+	box-shadow: var(--shadow0);
+	p {
+		text-align: center;
+		margin-bottom: 12px;
+		span {
+			font-family: var(--fonts-bold);
+			font-size: 1.5em;
+			margin: 0 16px;
+		}
+	}
+}

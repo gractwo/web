@@ -42,6 +42,25 @@ main {
 a {
 	color: rgb(251, 99, 107);
 }
+button {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 8px;
+	margin: 0 8px;
+	background: none;
+	border: 1px solid var(--grey);
+	// background: rgba(grey, 0.45);
+	border-radius: 4px;
+	color: var(--color);
+	font-family: var(--fonts-bold);
+	cursor: pointer;
+	transition-duration: 100ms;
+	&:hover {
+		background: rgba(grey, 0.25);
+		box-shadow: var(--shadow0);
+		// color: black;
+	}
+}
 
 .chips {
 	display: flex;

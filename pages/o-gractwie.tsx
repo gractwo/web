@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 const PageInfo = () => {
 	const [personsList, setPersonsList] = useState([]);
+	const [funFact, setFunFact] = useState("");
 	type apiResType = {
 		Id: string;
 		Name: string;
@@ -18,6 +19,9 @@ const PageInfo = () => {
 		DevBadge?: boolean;
 		AssignedUser?: string;
 	};
+	function getFunFact(): void {
+		setFunFact("Genezą nazwy Gractwa jest złączenie słów „Gracz” i „Bractwo”.");
+	}
 	useEffect(() => {
 		fetch("https://gractwo.pl/api/v1/admincards")
 			.then((res) => {
@@ -29,6 +33,7 @@ const PageInfo = () => {
 			.catch((err) => {
 				console.log(err);
 			});
+		getFunFact();
 	}, []);
 	return (
 		<>
@@ -65,6 +70,10 @@ const PageInfo = () => {
 						linki i przekierowania
 						<Icon icon="Link2" />
 					</Link>
+					{/* <Link href="#ciekawostka" className="chip">
+						ciekawostki
+						<Icon icon="Info" />
+					</Link> */}
 				</div>
 			</main>
 			<main id="geneza-gractwa">
@@ -162,6 +171,17 @@ const PageInfo = () => {
 					})}
 				</div>
 			</main>
+			{/* <main id="ciekawostka">
+				<h2>ciekawostka</h2>
+				<div className={styles.funfact}>
+					<p>
+						<span>{"„"}</span>
+						{funFact}
+						<span>{"”"}</span>
+					</p>
+					<button onClick={getFunFact}>Odśwież ciekawostkę.</button>
+				</div>
+			</main> */}
 		</>
 	);
 };
