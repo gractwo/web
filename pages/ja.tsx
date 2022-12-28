@@ -7,10 +7,11 @@ const PageMe = () => {
 		<>
 			{isLoading && (
 				<main>
-					<p>Data is being fetched...</p>
+					<h3>Ładujemy dane dla Ciebie...</h3>
+					<p>Sit tight.</p>
 				</main>
 			)}
-			{user && (
+			{!isLoading && user && (
 				<main>
 					<div className={styles.header}>
 						<img src={user.picture || ""} alt={`${user.name}'s picture`} />
@@ -28,7 +29,7 @@ const PageMe = () => {
 					</p> */}
 				</main>
 			)}
-			{!user && (
+			{!isLoading && !user && (
 				<main>
 					<h1>/ja</h1>
 					<p>
