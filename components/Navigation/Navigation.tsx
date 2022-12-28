@@ -42,13 +42,13 @@ const Navigation = () => {
 						})}
 					</div>
 				</div>
-				<Link
-					href=""
+				<a
+					href="/api/auth/login"
 					style={{ display: "flex" }}
 					className={`${styles.link} ${styles.profile}`}
 				>
 					zaloguj się
-				</Link>
+				</a>
 				<Link
 					href=""
 					style={{ display: "none" }}
