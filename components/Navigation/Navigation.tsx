@@ -74,7 +74,7 @@ const Navigation = () => {
 				{!isLoading && !user && (
 					<a
 						href="/api/auth/login"
-						style={{ display: "flex" }}
+						style={{ marginLeft: "auto" }}
 						className={`${styles.link} ${styles.partprofile}`}
 					>
 						zaloguj się
