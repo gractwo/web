@@ -23,7 +23,7 @@ const PageInfo = () => {
 		setFunFact("Genezą nazwy Gractwa jest złączenie słów „Gracz” i „Bractwo”.");
 	}
 	useEffect(() => {
-		fetch("https://gractwo.pl/api/v1/admincards")
+		fetch("https://gractwo.pl/api/v1/persons-of-note")
 			.then((res) => {
 				return res.json();
 			})
@@ -95,7 +95,7 @@ const PageInfo = () => {
 				<div className={styles.persons}>
 					{personsList
 						.filter((el: apiResType) => {
-							return !el.IsAdmin;
+							return el.IsAdmin;
 						})
 						.map((el: apiResType) => {
 							return (
@@ -123,7 +123,7 @@ const PageInfo = () => {
 						})}
 				</div>
 			</main>
-			{/* <main id="osoby-godne-uwagi">
+			<main id="osoby-godne-uwagi">
 				<h2>osoby godne uwagi</h2>
 				<div className={styles.persons}>
 					{personsList
@@ -155,7 +155,7 @@ const PageInfo = () => {
 							);
 						})}
 				</div>
-			</main> */}
+			</main>
 			<main id="linki">
 				<h2>linki i przekierowania</h2>
 				<div className="chips">
