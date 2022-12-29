@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 const Navigation = () => {
-	const { user, isLoading } = useUser();
+	const { user, error, isLoading } = useUser();
 	return (
 		<>
 			<div className={styles.nav}>
@@ -51,25 +51,27 @@ const Navigation = () => {
 						</Link>
 					</>
 				)}
+				{!isLoading && !error && user && (
+					<Link href="/ja" className={`${styles.link} ${styles.profile}`}>
+						{user.picture && (
+							<img src={user.picture} alt={`${user.name}'s profile picture`} />
+						)}
+						{!user.picture && <Icon icon="User" />}
+						{user.nickname}
+					</Link>
+				)}
+				{error && (
+					<Link href="/ja" className={`${styles.link} ${styles.profile}`}>
+						wystąpił błąd!
+					</Link>
+				)}
 				{!isLoading && user && (
-					<>
-						<Link href="/ja" className={`${styles.link} ${styles.profile}`}>
-							{user.picture && (
-								<img
-									src={user.picture}
-									alt={`${user.name}'s profile picture`}
-								/>
-							)}
-							{!user.picture && <Icon icon="User" />}
-							{user.nickname}
-						</Link>
-						<Link
-							href="/api/auth/logout"
-							className={`${styles.link} ${styles.partprofile}`}
-						>
-							<Icon icon="LogOut" />
-						</Link>
-					</>
+					<Link
+						href="/api/auth/logout"
+						className={`${styles.link} ${styles.partprofile}`}
+					>
+						<Icon icon="LogOut" />
+					</Link>
 				)}
 				{!isLoading && !user && (
 					<Link
