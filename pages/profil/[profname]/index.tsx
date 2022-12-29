@@ -17,7 +17,7 @@ const ProfilePage = () => {
 	const [persons, setPersons] = useState([]);
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		fetch("https://gractwo.pl/api/v1/admincards")
+		fetch("https://gractwo.pl/api/v1/persons-of-note")
 			.then((res) => {
 				return res.json();
 			})
