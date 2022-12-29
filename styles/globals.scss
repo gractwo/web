@@ -27,6 +27,7 @@ body {
 	color: var(--color);
 	min-height: 100vh;
 	font-family: var(--fonts-norm);
+	overflow-y: overlay;
 }
 h1,
 h2,
@@ -96,4 +97,13 @@ button {
 			color: var(--color);
 		}
 	}
+}
+
+::-webkit-scrollbar {
+	background: transparent;
+	width: 4px;
+}
+::-webkit-scrollbar-thumb {
+	background: #999;
+	border-radius: 1337px;
 }

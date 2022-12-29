@@ -1,0 +1,14 @@
+.header {
+	margin: 2rem 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	img {
+		height: 69px;
+		border-radius: 50%;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+}

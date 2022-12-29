@@ -5,8 +5,10 @@ import { Icon } from "../Icon";
 import navigation from "../../data/navigation.json";
 import Link from "next/link";
 
+import { useUser } from "@auth0/nextjs-auth0/client";
+
 const Navigation = () => {
-	let username: string = "";
+	const { user, isLoading } = useUser();
 	return (
 		<>
 			<div className={styles.nav}>
@@ -42,20 +44,43 @@ const Navigation = () => {
 						})}
 					</div>
 				</div>
-				<Link
-					href=""
-					style={{ display: "flex" }}
-					className={`${styles.link} ${styles.profile}`}
-				>
-					zaloguj się
-				</Link>
-				<Link
-					href=""
-					style={{ display: "none" }}
-					className={`${styles.link} ${styles.profile}`}
-				>
-					{username ? username : "twój profil"}
-				</Link>
+				{isLoading && (
+					<>
+						<Link href="/" className={`${styles.link} ${styles.profile}`}>
+							fetching danych...
+						</Link>
+					</>
+				)}
+				{!isLoading && user && (
+					<>
+						<Link href="/ja" className={`${styles.link} ${styles.profile}`}>
+							{user.picture && (
+								<img
+									src={user.picture}
+									alt={`${user.name}'s profile picture`}
+								/>
+							)}
+							{!user.picture && <Icon icon="User" />}
+							{user.nickname}
+						</Link>
+						<a
+							href="/api/auth/logout"
+							className={`${styles.link} ${styles.partprofile}`}
+						>
+							<Icon icon="LogOut" />
+						</a>
+					</>
+				)}
+				{!isLoading && !user && (
+					<a
+						href="/api/auth/login"
+						style={{ marginLeft: "auto" }}
+						className={`${styles.link} ${styles.partprofile}`}
+					>
+						zaloguj się
+						<Icon icon="LogIn" />
+					</a>
+				)}
 			</div>
 		</>
 	);
