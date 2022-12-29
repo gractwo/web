@@ -20,14 +20,15 @@ type UserProfileCardProps = {
 	accentColor?: string;
 };
 
-let placeholderPicture = "https://placewaifu.com/image/128?greyscale&blur";
-
 const ProfileCard = (user: UserProfileCardProps) => {
 	return (
 		<>
 			<div className={styles.profile}>
 				<article>
-					<img src={user.picture || placeholderPicture} alt={user.username} />
+					<img
+						src={user.picture || "https://placewaifu.com/image/128"}
+						alt={user.username}
+					/>
 					<div className={styles.inner}>
 						<header>
 							<h1>{user.username}</h1>
@@ -97,7 +98,7 @@ const ProfileCard = (user: UserProfileCardProps) => {
 								badgeImage?: string;
 							}) => {
 								return (
-									<section>
+									<section key={el.badgeName}>
 										<h3>{el.badgeName}</h3>
 										<p>{el.badgeDesc}</p>
 									</section>
