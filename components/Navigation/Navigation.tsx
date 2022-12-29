@@ -63,23 +63,23 @@ const Navigation = () => {
 							{!user.picture && <Icon icon="User" />}
 							{user.nickname}
 						</Link>
-						<a
+						<Link
 							href="/api/auth/logout"
 							className={`${styles.link} ${styles.partprofile}`}
 						>
 							<Icon icon="LogOut" />
-						</a>
+						</Link>
 					</>
 				)}
 				{!isLoading && !user && (
-					<a
+					<Link
 						href="/api/auth/login"
 						style={{ marginLeft: "auto" }}
 						className={`${styles.link} ${styles.partprofile}`}
 					>
 						zaloguj się
 						<Icon icon="LogIn" />
-					</a>
+					</Link>
 				)}
 			</div>
 		</>
