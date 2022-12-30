@@ -18,6 +18,7 @@ const PageMe = () => {
 	const [personsData, setPersonsData] = useState<personsSchema | null>(null);
 
 	useEffect(() => {
+		if (!user) return;
 		fetch("https://gractwo.pl/api/v1/admincards")
 			.then((res) => {
 				return res.json();
