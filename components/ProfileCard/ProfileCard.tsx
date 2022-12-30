@@ -60,7 +60,7 @@ const ProfileCard = ({ data }: UserProfileCardProps) => {
 										className={styles.dot}
 										style={{ background: data.accentColor }}
 									/>
-									DEV
+									Developer
 								</div>
 							)}
 						</div>

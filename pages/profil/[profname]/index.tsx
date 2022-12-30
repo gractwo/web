@@ -46,7 +46,7 @@ const ProfilePage = () => {
 			return (
 				<>
 					<SEO title={person.Name} />
-					<main>
+					{/* <main>
 						<div
 							style={{
 								display: "flex",
@@ -71,26 +71,26 @@ const ProfilePage = () => {
 								<h1>{person.Name}</h1>
 								<p>{person.Desc}</p>
 							</div>
-						</div>
-						{/* FOR LATER BIGDESC DATASET */}
-						{/* {person.profile?.bigdesc.map((el, index) => {
+						</div> */}
+					{/* FOR LATER BIGDESC DATASET */}
+					{/* {person.profile?.bigdesc.map((el, index) => {
 						return <p key={index}>{el || <br />}</p>;
 					})} */}
-					</main>
+					{/* </main> */}
 					<main>
 						<ProfileCard
 							data={{
 								username: person.Name,
 								picture: person.Img,
-								description: "Twój opis. ヽ(*・ω・)ﾉ",
-								// accentColor: "violet",
+								description: person.Desc,
 								isAdmin: person.IsAdmin,
 								isDeveloper: person.DevBadge,
-								experience: {
-									level: 69,
-									looseXP: 420,
-									tilNextLevel: 69,
-								},
+								// accentColor: "violet",
+								// experience: {
+								// level: 69,
+								// looseXP: 420,
+								// tilNextLevel: 69,
+								// },
 								badges: [
 									{
 										badgeName: "Odkrywca internetowy",
