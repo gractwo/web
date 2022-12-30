@@ -1,0 +1,10 @@
+.inputSectionParent {
+	display: flex;
+	flex-direction: column;
+}
+.inputSection {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	align-items: baseline;
+}

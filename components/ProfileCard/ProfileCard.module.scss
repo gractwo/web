@@ -18,6 +18,9 @@
 			border-radius: 50%;
 			height: 128px;
 			width: 128px;
+			aspect-ratio: 1 / 1;
+			object-fit: cover;
+			object-position: 50% 35%;
 			@media screen and (max-width: 600px) {
 				height: 64px;
 				width: 64px;

@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { ProfileCard } from "../../../components/ProfileCard/ProfileCard";
 import { SEO } from "../../../components/SEO";
 
 const ProfilePage = () => {
@@ -43,37 +44,64 @@ const ProfilePage = () => {
 				return wpis.Name.replaceAll(" ", "-").toLocaleLowerCase() === profname;
 			})[0];
 			return (
-				<main>
+				<>
 					<SEO title={person.Name} />
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "row",
-							alignItems: "center",
-							gap: "1rem",
-							marginBottom: "1rem",
-						}}
-					>
-						<img
-							src={person.Img}
-							alt={`${person.Name} profile image`}
+					<main>
+						<div
 							style={{
-								width: "128px",
-								aspectRatio: "1/1",
-								objectFit: "cover",
-								borderRadius: "50%",
+								display: "flex",
+								flexDirection: "row",
+								justifyContent: "center",
+								alignItems: "center",
+								gap: "1rem",
+								margin: "2rem 0 0 0",
 							}}
-						/>
-						<div>
-							<h1>{person.Name}</h1>
-							<p>{person.Desc}</p>
+						>
+							<img
+								src={person.Img}
+								alt={`${person.Name} profile image`}
+								style={{
+									width: "128px",
+									aspectRatio: "1/1",
+									objectFit: "cover",
+									borderRadius: "50%",
+								}}
+							/>
+							<div>
+								<h1>{person.Name}</h1>
+								<p>{person.Desc}</p>
+							</div>
 						</div>
-					</div>
-					{/* FOR LATER BIGDESC DATASET */}
-					{/* {person.profile?.bigdesc.map((el, index) => {
+						{/* FOR LATER BIGDESC DATASET */}
+						{/* {person.profile?.bigdesc.map((el, index) => {
 						return <p key={index}>{el || <br />}</p>;
 					})} */}
-				</main>
+					</main>
+					<main>
+						<ProfileCard
+							data={{
+								username: person.Name,
+								picture: person.Img,
+								description: "Twój opis. ヽ(*・ω・)ﾉ",
+								// accentColor: "violet",
+								isAdmin: person.IsAdmin,
+								isDeveloper: person.DevBadge,
+								experience: {
+									level: 69,
+									looseXP: 420,
+									tilNextLevel: 69,
+								},
+								badges: [
+									{
+										badgeName: "Odkrywca internetowy",
+										badgeDesc:
+											"Logowanie się na gractwo.pl nie jest takie straszne.",
+									},
+								],
+							}}
+						/>
+					</main>
+				</>
 			);
 		} else {
 			return (

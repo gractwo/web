@@ -1,62 +1,64 @@
 import styles from "./ProfileCard.module.scss";
 
 type UserProfileCardProps = {
-	username: string;
-	description?: string;
-	picture?: string | null;
-	isAdmin?: boolean;
-	isDeveloper?: boolean;
-	experience?: {
-		level: number;
-		tilNextLevel?: number;
-		looseXP?: number;
+	data: {
+		username: string;
+		description?: string;
+		picture?: string | null;
+		isAdmin?: boolean;
+		isDeveloper?: boolean;
+		experience?: {
+			level: number;
+			tilNextLevel?: number;
+			looseXP?: number;
+		};
+		badges?: {
+			badgeName: string;
+			badgeDesc?: string;
+			badgeMerit?: string;
+			badgeImage?: string;
+		}[];
+		accentColor?: string;
 	};
-	badges?: {
-		badgeName: string;
-		badgeDesc?: string;
-		badgeMerit?: string;
-		badgeImage?: string;
-	}[];
-	accentColor?: string;
 };
 
-const ProfileCard = (user: UserProfileCardProps) => {
+const ProfileCard = ({ data }: UserProfileCardProps) => {
 	return (
 		<>
 			<div className={styles.profile}>
 				<article>
 					<img
-						src={user.picture || "https://placewaifu.com/image/128"}
-						alt={user.username}
+						src={data.picture || "https://placewaifu.com/image/128"}
+						alt={data.username}
 					/>
 					<div className={styles.inner}>
 						<header>
-							<h1>{user.username}</h1>
+							<h1>{data.username}</h1>
 							<p>
-								{user.experience?.level && (
+								{data.experience?.level && (
 									<>
 										{"LVL "}
-										<span>{user.experience.level}</span>
+										<span>{data.experience.level}</span>
 									</>
 								)}
 							</p>
 						</header>
-						<p>{user.description}</p>
+						<p>{data.description}</p>
 						<div className={styles.badges}>
-							{user.isAdmin && (
+							{data.isAdmin && (
 								<div className={styles.badge}>
 									<div
 										className={styles.dot}
-										style={{ background: user.accentColor }}
+										style={{ background: data.accentColor }}
 									/>
 									Admin
 								</div>
 							)}
-							{user.isDeveloper && (
+							{data.isDeveloper && (
 								<div className={styles.badge}>
 									<div
 										className={styles.dot}
-										style={{ background: user.accentColor }}
+										style={{ background: data.accentColor }}
 									/>
 									DEV
 								</div>
@@ -64,23 +66,23 @@ const ProfileCard = (user: UserProfileCardProps) => {
 						</div>
 					</div>
 				</article>
-				{user.experience?.looseXP && user.experience.tilNextLevel && (
+				{data.experience?.looseXP && data.experience.tilNextLevel && (
 					<div className={styles.xpinfo}>
-						<p>XP: {user.experience.looseXP}</p>
-						<p>XP until next level: {user.experience.tilNextLevel} </p>
+						<p>XP: {data.experience.looseXP}</p>
+						<p>XP until next level: {data.experience.tilNextLevel} </p>
 					</div>
 				)}
-				{user.experience?.looseXP && user.experience.tilNextLevel && (
+				{data.experience?.looseXP && data.experience.tilNextLevel && (
 					<div className={styles.xpbar}>
 						<div
 							className={styles.xpinner}
 							style={{
-								background: user.accentColor,
+								background: data.accentColor,
 								width:
 									(
-										(user.experience.looseXP /
-											(user.experience.looseXP +
-												user.experience.tilNextLevel)) *
+										(data.experience.looseXP /
+											(data.experience.looseXP +
+												data.experience.tilNextLevel)) *
 										100
 									).toString() + "%",
 							}}
@@ -88,7 +90,7 @@ const ProfileCard = (user: UserProfileCardProps) => {
 					</div>
 				)}
 				<footer>
-					{user.badges
+					{data.badges
 						?.slice(0, 1)
 						.map(
 							(el: {
