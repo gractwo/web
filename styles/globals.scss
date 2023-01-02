@@ -62,6 +62,17 @@ button {
 		// color: black;
 	}
 }
+input {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 4px;
+	border-radius: 3px;
+	background: rgba(white, 0.1);
+	border: 0;
+	color: white;
+	outline: none;
+	font-family: var(--fonts-norm);
+}
 
 .chips {
 	display: flex;

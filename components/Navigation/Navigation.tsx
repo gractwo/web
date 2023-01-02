@@ -27,7 +27,10 @@ const Navigation = () => {
 						</Link>
 					);
 				})}
-				<div tabIndex={0} className={`${styles.dropdown} ${styles.mobile}`}>
+				<div
+					tabIndex={0}
+					className={`${styles.dropdown} ${styles.mobile} ${styles.menumobile}`}
+				>
 					<Icon icon="Menu" />
 					{/* TUTAJ WSTAWIĆ IKONKĘ PÓŹNIEJ */}
 					<div className={styles.innerdropdown}>
@@ -68,7 +71,7 @@ const Navigation = () => {
 				{!isLoading && user && (
 					<Link
 						href="/api/auth/logout"
-						className={`${styles.link} ${styles.partprofile}`}
+						className={`${styles.link} ${styles.partprofile} ${styles.logoutmobile}`}
 					>
 						<Icon icon="LogOut" />
 					</Link>

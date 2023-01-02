@@ -91,7 +91,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
 	.nav {
 		height: 3rem;
 	}
@@ -100,6 +100,12 @@
 	}
 	.mobile {
 		display: inherit;
+	}
+	.menumobile {
+		padding: 0 1rem;
+	}
+	.logoutmobile {
+		padding: 0 1rem;
 	}
 }
 
