@@ -13,7 +13,7 @@ const IndexGallery = () => {
 	};
 	const [data, setData] = useState([]);
 	useEffect(() => {
-		fetch("https://gractwo.pl/api/v1/images")
+		fetch("https://gractwo.pl/api/v1/index-images")
 			.then((res) => {
 				return res.json();
 			})
