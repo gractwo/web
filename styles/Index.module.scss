@@ -52,6 +52,8 @@
 .statscontainer {
 	background: var(--black1);
 	box-shadow: var(--shadow0);
+	// background-image: radial-gradient(rgba(white, 3%) 0.8px, var(--black1) 0.8px);
+	// background-size: 8px 8px;
 }
 .stats {
 	display: flex;
