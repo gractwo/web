@@ -37,8 +37,14 @@
 		transform: scale(0.85);
 	}
 }
-.h1clicktorefreshsplash {
+.actualsplash {
 	user-select: none;
+	opacity: 0;
+	&.doneLoading {
+		opacity: 1;
+		animation-name: goIn;
+		animation-duration: 350ms;
+	}
 	&:hover {
 		cursor: pointer;
 	}
@@ -63,6 +69,13 @@
 		text-align: center;
 		h1 {
 			font-size: 2em;
+			min-height: 1em;
+			opacity: 0;
+			&.doneLoading {
+				opacity: 1;
+				animation-name: goIn;
+				animation-duration: 350ms;
+			}
 		}
 		&:first-of-type {
 			border-left: none;
@@ -90,5 +103,14 @@
 				border-bottom: 0;
 			}
 		}
+	}
+}
+@keyframes goIn {
+	from {
+		opacity: 0;
+		transform: translate(0, 20px);
+	}
+	to {
+		opacity: 1;
 	}
 }

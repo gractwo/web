@@ -8,6 +8,11 @@ import { IndexGallery } from "../components/IndexGallery/IndexGallery";
 const PageIndex = () => {
 	const [splash, setSplash] = useState("");
 	const [memberCount, setMemberCount] = useState("");
+	const [daysOfExistence, setDaysOfExistence] = useState("");
+	const [sentMessages, setSentMessages] = useState("");
+	const [welcomeText, setWelcomeText] = useState(
+		"Witamy na witrynie internetowej Gractwa."
+	);
 	function randomizeSplash(): void {
 		fetch("https://gractwo.pl/api/v1/splash")
 			.then((res) => {
@@ -17,6 +22,8 @@ const PageIndex = () => {
 				setSplash(data.Splash);
 			})
 			.catch((err) => {
+				setSplash("nie ma tu co zabezpieczać");
+				setWelcomeText("splashtexty spadły z rowerka!");
 				console.log(err);
 			});
 	}
@@ -30,10 +37,34 @@ const PageIndex = () => {
 				setMemberCount(data);
 			})
 			.catch((err) => {
+				setMemberCount("∞");
 				console.log(err);
 			});
+		setDaysOfExistence(
+			Math.floor(
+				(Date.now() - new Date("2020-07-06").getTime()) / 86400000
+			).toString()
+		);
+		setSentMessages("dużo");
 	}, []);
-	const welcometext: string = "Witamy na witrynie internetowej Gractwa."; // Mamy nadzieję że odnajdziesz czego szukasz, zbłąkana duszo.";
+	useEffect(() => {
+		if (!memberCount) return;
+		if (!daysOfExistence) return;
+		if (!sentMessages) return;
+		if (document) {
+			document
+				.querySelectorAll(".statCont > article > h1")
+				.forEach((el: Element) => {
+					el.classList.add(styles.doneLoading);
+				});
+		}
+	}, [memberCount, daysOfExistence, sentMessages]);
+	useEffect(() => {
+		if (!splash) return;
+		if (document) {
+			document.querySelector(".splashtext")?.classList.add(styles.doneLoading);
+		}
+	}, [splash]);
 	return (
 		<>
 			<SEO />
@@ -41,29 +72,25 @@ const PageIndex = () => {
 				<div className={styles.heroinside}>
 					<h1
 						onClick={randomizeSplash}
-						className={styles.h1clicktorefreshsplash}
+						className={`${styles.actualsplash} splashtext`}
 					>
 						&bdquo;{splash || "..."}&rdquo;
 					</h1>
-					<p>{welcometext}</p>
+					<p>{welcomeText || "Witamy na witrynie internetowej Gractwa."}</p>
 				</div>
 			</div>
 			<div className={styles.statscontainer}>
-				<main className={styles.stats}>
+				<main className={`${styles.stats} statCont`}>
 					<article>
-						<h1>{memberCount || "∞"}</h1>
+						<h1>{memberCount || "invis placeholder"}</h1>
 						<p>członków na discordzie</p>
 					</article>
 					<article>
-						<h1>
-							{Math.floor(
-								(Date.now() - new Date("2020-07-06").getTime()) / 86400000
-							)}
-						</h1>
+						<h1>{daysOfExistence || "invis placeholder"}</h1>
 						<p>dni istnienia gractwa</p>
 					</article>
 					<article>
-						<h1>dużo</h1>
+						<h1>{sentMessages || "invis placeholder"}</h1>
 						<p>wysłanych wiadomości</p>
 					</article>
 				</main>

@@ -14,7 +14,7 @@ const PageMeSettings = () => {
 					</main>
 				</>
 			)}
-			{error && (
+			{!isLoading && error && (
 				<main>
 					<h3>Wystąpił błąd.</h3>
 					<p>Tyle wiemy.</p>

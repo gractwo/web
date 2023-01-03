@@ -61,6 +61,14 @@
 			border-radius: var(--radius);
 			box-shadow: var(--shadow0);
 			transition-duration: 100ms;
+			animation-name: goIn;
+			animation-duration: 200ms;
+			@keyframes goIn {
+				from {
+					opacity: 0;
+					transform: translate(0, 16px);
+				}
+			}
 			img {
 				width: 128px;
 				max-width: 156px;

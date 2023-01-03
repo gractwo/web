@@ -15,10 +15,18 @@
 		margin: 0;
 		padding: 0;
 		max-height: var(--mheight);
+		animation-name: goIn;
+		animation-duration: 350ms;
 		@media screen and (max-width: 800px) {
 			text-decoration: none;
 			max-height: none;
 			text-align: center;
+		}
+		@keyframes goIn {
+			from {
+				opacity: 0;
+				transform: translate(0, 8px);
+			}
 		}
 		img {
 			max-height: var(--mheight);

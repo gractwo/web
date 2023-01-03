@@ -92,7 +92,7 @@ const PageInfo = () => {
 			</main>
 			<main id="sklad-administracji">
 				<h2>skład administracji</h2>
-				<div className={styles.persons}>
+				<div className={styles.persons} style={{ minHeight: "280px" }}>
 					{personsList
 						.filter((el: apiResType) => {
 							return el.IsAdmin;
@@ -125,7 +125,7 @@ const PageInfo = () => {
 			</main>
 			<main id="osoby-godne-uwagi">
 				<h2>osoby godne uwagi</h2>
-				<div className={styles.persons}>
+				<div className={styles.persons} style={{ minHeight: "128px" }}>
 					{personsList
 						.filter((el: apiResType) => {
 							return !el.IsAdmin;

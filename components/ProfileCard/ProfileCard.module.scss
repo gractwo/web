@@ -3,6 +3,14 @@
 	background: var(--black1);
 	border-radius: 8px;
 	box-shadow: var(--shadow0);
+	animation-name: goIn;
+	animation-duration: 350ms;
+	@keyframes goIn {
+		from {
+			opacity: 0;
+			transform: translate(0, 16px);
+		}
+	}
 	article {
 		display: flex;
 		flex-direction: row;

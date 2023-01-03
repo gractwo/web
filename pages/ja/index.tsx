@@ -19,7 +19,7 @@ const PageMe = () => {
 
 	useEffect(() => {
 		if (!user) return;
-		fetch("https://gractwo.pl/api/v1/admincards")
+		fetch("https://gractwo.pl/api/v1/persons-of-note")
 			.then((res) => {
 				return res.json();
 			})
@@ -41,7 +41,7 @@ const PageMe = () => {
 					<p>Sit tight.</p>
 				</main>
 			)}
-			{error && (
+			{!isLoading && error && (
 				<main>
 					<h3>Wystąpił błąd.</h3>
 					<p>Tyle wiemy:</p>
