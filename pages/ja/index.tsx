@@ -35,6 +35,7 @@ const PageMe = () => {
 
 	return (
 		<>
+			<SEO title="twój profil" dontindex />
 			{isLoading && (
 				<main>
 					<h3>Ładujemy dane dla Ciebie...</h3>
@@ -51,7 +52,6 @@ const PageMe = () => {
 			)}
 			{!isLoading && !error && user && (
 				<main>
-					<SEO title="twój profil" />
 					<ProfileCard
 						data={{
 							username: user.name || "unknown user",

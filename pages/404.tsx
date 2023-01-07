@@ -10,7 +10,7 @@ const PageError404 = () => {
 	}, [router.asPath]);
 	return (
 		<>
-			<SEO title="404" />
+			<SEO title="404" dontindex />
 			<div
 				style={{
 					display: "flex",

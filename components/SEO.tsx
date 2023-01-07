@@ -4,9 +4,17 @@ type seoprops = {
 	title?: string;
 	noatsign?: boolean; // simply add "noatsign" as property to element
 	description?: string;
+	picture?: string;
+	dontindex?: boolean;
 };
 
-const SEO = ({ title, noatsign, description }: seoprops) => {
+const SEO = ({
+	title,
+	noatsign,
+	description,
+	picture,
+	dontindex,
+}: seoprops) => {
 	const titleEnhanced = title
 		? `${title}${noatsign ? "" : " @ gractwo.pl"}`
 		: "Gractwo!";
@@ -25,15 +33,21 @@ const SEO = ({ title, noatsign, description }: seoprops) => {
 			<meta property="og:title" content={titleEnhanced} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://gractwo.pl" />
-			<meta property="og:image" content={remoteLogoRender} />
+			<meta property="og:image" content={picture || remoteLogoRender} />
 			<meta property="og:site_name" content="gractwo.pl" />
 			<meta
 				property="og:description"
 				content={description || defaultDescription}
 			/>
 
-			<meta name="robots" content="index, follow" />
-			<meta name="googlebot" content="index, follow" />
+			<meta
+				name="robots"
+				content={dontindex ? "noindex, nofollow" : "index, follow"}
+			/>
+			<meta
+				name="googlebot"
+				content={dontindex ? "noindex, nofollow" : "index, follow"}
+			/>
 		</Head>
 	);
 };
