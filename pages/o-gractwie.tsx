@@ -49,7 +49,7 @@ const PageInfo = () => {
 						<p style={{ textAlign: "justify" }}>
 							Gractwo jest nieformalną organizacją i społecznością osób
 							zainteresowanych grami, anime, popkulturą. Powstałe w 2020 roku
-							jest zreszeniem ludzi w dużej mierze znających się nawzajem i
+							jest zrzeszeniem ludzi w dużej mierze znających się nawzajem i
 							spędzających razem „na Gractwie” czas.
 							{/* Genezą nazwy jest złączenie słów „Gracz” i „Bractwo”. */}
 							{/*  */}

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import logo from "../public/logo.svg";
 
 type seoprops = {
 	title?: string;
@@ -8,10 +7,13 @@ type seoprops = {
 };
 
 const SEO = ({ title, noatsign, description }: seoprops) => {
-	const defaultDescription = "Witryna internetowa Gractwa.";
 	const titleEnhanced = title
 		? `${title}${noatsign ? "" : " @ gractwo.pl"}`
-		: "gractwo.pl";
+		: "Gractwo!";
+	const defaultDescription = `Gractwo jest nieformalną organizacją i społecznością osób zainteresowanych grami, anime, popkulturą.
+		Powstałe w 2020 roku jest zrzeszeniem ludzi w dużej mierze znających się nawzajem i spędzających razem „na Gractwie” czas.`;
+	const remoteLogoRender =
+		"https://raw.githubusercontent.com/gractwo/assets/master/raster/logo-x192.png";
 	return (
 		<Head>
 			<title>{titleEnhanced}</title>
@@ -20,10 +22,10 @@ const SEO = ({ title, noatsign, description }: seoprops) => {
 
 			<meta name="theme-color" content="#fb636b" />
 
+			<meta property="og:title" content={titleEnhanced} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://gractwo.pl" />
-			<meta property="og:title" content={titleEnhanced} />
-			<meta property="og:image" content={logo} />
+			<meta property="og:image" content={remoteLogoRender} />
 			<meta property="og:site_name" content="gractwo.pl" />
 			<meta
 				property="og:description"
