@@ -7,6 +7,7 @@ const PageMeSettings = () => {
 
 	return (
 		<>
+			<SEO dontindex title="ustawienia konta" />
 			{isLoading && (
 				<>
 					<main>

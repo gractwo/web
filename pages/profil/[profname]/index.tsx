@@ -31,7 +31,12 @@ const ProfilePage = () => {
 			});
 	}, []);
 	if (loading) {
-		return <main style={{ color: "grey" }}>Fetching data...</main>;
+		return (
+			<>
+				<SEO dontindex />
+				<main style={{ color: "grey" }}>Fetching data...</main>
+			</>
+		);
 	} else {
 		if (
 			persons
@@ -45,38 +50,11 @@ const ProfilePage = () => {
 			})[0];
 			return (
 				<>
-					<SEO title={person.Name} />
-					{/* <main>
-						<div
-							style={{
-								display: "flex",
-								flexDirection: "row",
-								justifyContent: "center",
-								alignItems: "center",
-								gap: "1rem",
-								margin: "2rem 0 0 0",
-							}}
-						>
-							<img
-								src={person.Img}
-								alt={`${person.Name} profile image`}
-								style={{
-									width: "128px",
-									aspectRatio: "1/1",
-									objectFit: "cover",
-									borderRadius: "50%",
-								}}
-							/>
-							<div>
-								<h1>{person.Name}</h1>
-								<p>{person.Desc}</p>
-							</div>
-						</div> */}
-					{/* FOR LATER BIGDESC DATASET */}
-					{/* {person.profile?.bigdesc.map((el, index) => {
-						return <p key={index}>{el || <br />}</p>;
-					})} */}
-					{/* </main> */}
+					<SEO
+						title={person.Name}
+						description={person.Desc}
+						picture={person.Img}
+					/>
 					<main>
 						<ProfileCard
 							data={{
@@ -106,7 +84,7 @@ const ProfilePage = () => {
 		} else {
 			return (
 				<main>
-					<SEO title="nieznany profil" />
+					<SEO title="nieznany profil" dontindex />
 					<h1>Sorki!{" :("}</h1>
 					<p style={{ lineHeight: "30px" }}>
 						Sprawdź pisownię:
