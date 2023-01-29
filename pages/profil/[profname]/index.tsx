@@ -69,13 +69,7 @@ const ProfilePage = () => {
 								// looseXP: 420,
 								// tilNextLevel: 69,
 								// },
-								badges: [
-									{
-										badgeName: "Odkrywca internetowy",
-										badgeDesc:
-											"Logowanie się na gractwo.pl nie jest takie straszne.",
-									},
-								],
+								badges: [],
 							}}
 						/>
 					</main>
