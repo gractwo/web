@@ -15,7 +15,16 @@ const PageMe = () => {
 		DevBadge?: boolean;
 		AssignedUser?: string;
 	};
+	type badgeSchema = {
+		Id: string; // ID
+		Name: string; // badge name
+		Desc: string; // badge description (short)
+		Expl?: string; // badge explanation (long)
+		Img?: string; // direct url to an image
+		Date?: string; // datetime w/ timezone (eg: "2022-02-25T10:23:54Z")
+	};
 	const [personsData, setPersonsData] = useState<personsSchema | null>(null);
+	const [badgesData, setBadgesData] = useState<badgeSchema[] | null>(null);
 
 	useEffect(() => {
 		if (!user) return;
@@ -26,10 +35,21 @@ const PageMe = () => {
 			.then((data) => {
 				setPersonsData(
 					data.filter((el: personsSchema) => {
-						if (!user) return false;
 						return el.AssignedUser === user.sub?.replace("oauth2|discord|", "");
 					})[0]
 				);
+			});
+		fetch(
+			`https://gractwo.pl/api/v1/badges/${user.sub?.replace(
+				"oauth2|discord|",
+				""
+			)}`
+		)
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setBadgesData(data);
 			});
 	}, [user]);
 
@@ -65,37 +85,7 @@ const PageMe = () => {
 							// 	looseXP: 420,
 							// 	tilNextLevel: 69,
 							// },
-							badges: [
-								{
-									badgeName: "Odkrywca internetowy",
-									badgeDesc:
-										"Logowanie się na gractwo.pl nie jest takie straszne.",
-								},
-								{
-									badgeName: "Technik Informatyk",
-									badgeDesc: "Łapanki na korytarzu to normalka.",
-								},
-								{
-									badgeName: "Rozpad PGTF",
-									badgeDesc: "Służba w oddziałach Super Pizzy - powód do dumy.",
-								},
-								{
-									badgeName: "Mollin Stream",
-									badgeDesc: "„Sorry, ja za bardzo nie pamietam.” ~ Mollin",
-								},
-								{
-									badgeName: "Alkoholik",
-									badgeDesc: "pracoholicy gdy skończy im się pracohol:",
-								},
-								{
-									badgeName: "Studnia Oneshot",
-									badgeDesc: "elf w studni - ciekawe jak stamtąd wyjdzie",
-								},
-								{
-									badgeName: "RemCon 2022",
-									badgeDesc: "pomorze konwent",
-								},
-							],
+							badges: badgesData || undefined,
 						}}
 					/>
 					<Link href="/ja/ustawienia">

@@ -13,10 +13,12 @@ type UserProfileCardProps = {
 			looseXP?: number;
 		};
 		badges?: {
-			badgeName: string;
-			badgeDesc?: string;
-			badgeMerit?: string;
-			badgeImage?: string;
+			Id: string; // ID
+			Name: string; // badge name
+			Desc: string; // badge description (short)
+			Expl?: string; // badge explanation (long)
+			Img?: string; // direct url to an image
+			Date?: string; // datetime w/ timezone (eg: "2022-02-25T10:23:54Z")
 		}[];
 		accentColor?: string;
 	};
@@ -90,23 +92,26 @@ const ProfileCard = ({ data }: UserProfileCardProps) => {
 					</div>
 				)}
 				<footer>
-					{data.badges
-						?.slice(0, 1)
-						.map(
-							(el: {
-								badgeName: string;
-								badgeDesc?: string;
-								badgeMerit?: string;
-								badgeImage?: string;
-							}) => {
-								return (
-									<section key={el.badgeName}>
-										<h3>{el.badgeName}</h3>
-										<p>{el.badgeDesc}</p>
-									</section>
-								);
-							}
-						)}
+					{data.badges?.map(
+						(el: {
+							Id: string; // ID
+							Name: string; // badge name
+							Desc: string; // badge description (short)
+							Expl?: string; // badge explanation (long)
+							Img?: string; // direct url to an image
+							Date?: string; // datetime w/ timezone (eg: "2022-02-25T10:23:54Z")
+						}) => {
+							return (
+								<section key={el.Name}>
+									<img src={el.Img} />
+									<div>
+										<h3>{el.Name}</h3>
+										<p>{el.Desc}</p>
+									</div>
+								</section>
+							);
+						}
+					)}
 				</footer>
 			</div>
 		</>
