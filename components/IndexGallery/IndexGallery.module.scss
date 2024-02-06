@@ -1,70 +1,14 @@
-.gallerycontainer {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	// justify-content: space-between;
-	@media screen and (max-width: 800px) {
-		flex-direction: column;
-		align-items: center;
-	}
-	gap: 2rem;
-	.galleryimg {
-		--mheight: 18rem;
-		position: relative;
-		display: block;
-		margin: 0;
-		padding: 0;
-		max-height: var(--mheight);
-		animation-name: goIn;
-		animation-duration: 350ms;
-		@media screen and (max-width: 800px) {
-			text-decoration: none;
-			max-height: none;
-			text-align: center;
-		}
-		@keyframes goIn {
-			from {
-				opacity: 0;
-				transform: translate(0, 8px);
-			}
-		}
-		img {
-			max-height: var(--mheight);
-			border-radius: 8px;
-			@media screen and (max-width: 800px) {
-				max-width: 280px;
-			}
-		}
-		article {
-			position: absolute;
-			backdrop-filter: blur(8px);
-			background: rgba(#fff, 0.4);
-			color: var(--backdrop);
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			padding: 0.25rem 0.5rem;
-			border-radius: 8px;
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
-			transition-duration: 100ms;
-			opacity: 0;
-			p {
-				margin-bottom: 4px;
-			}
-			@media screen and (max-width: 800px) {
-				display: block;
-				position: relative;
-				background: unset;
-				color: var(--white0);
-				padding: 0;
-				opacity: 1;
-			}
-		}
-		&:hover {
-			article {
-				opacity: 1;
-			}
-		}
-	}
+.image:hover {
+	cursor: pointer;
+}
+.title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.subtitle {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }

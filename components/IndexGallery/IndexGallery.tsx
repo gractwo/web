@@ -1,6 +1,11 @@
 import styles from "./IndexGallery.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const IndexGallery = () => {
 	type apiResType = {
@@ -24,39 +29,40 @@ const IndexGallery = () => {
 				console.log(err);
 			});
 	}, []);
+	function redirect(
+		Link: string
+	): import("react").MouseEventHandler<HTMLImageElement> {
+		return (event: React.MouseEvent<HTMLImageElement>) => {
+			window.open(Link, "_blank");
+		};
+	}
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 	return (
 		<>
 			<main>
 				<h2>galeria zdjęć idących mocno</h2>
 			</main>
-			<main className={styles.gallerycontainer}>
-				{data.map((el: apiResType) => {
-					return (
-						<Link key={el.Id} href={el.Link} className={styles.galleryimg}>
-							<img src={el.Link} alt={el.Description || el.Title} />
-							<article>
-								<h3>{el.Title}</h3>
-								<p>
-									{el.Place || ""}
-									{el.Place && el.Date ? ", " : ""}
-									{el.Date
-										? new Date(el.Date).getDate().toString().length == 2
-											? new Date(el.Date).getDate()
-											: "0" + new Date(el.Date).getDate()
-										: ""}
-									{"."}
-									{el.Date
-										? (new Date(el.Date).getMonth() + 1).toString().length == 2
-											? new Date(el.Date).getMonth() + 1
-											: "0" + (new Date(el.Date).getMonth() + 1)
-										: ""}
-									{"."}
-									{el.Date ? new Date(el.Date).getFullYear() : ""}
-								</p>
-							</article>
-						</Link>
-					);
-				})}
+			<main>
+				<ImageList variant="masonry" cols={isMobile ? 1 : 3} gap={8}>
+					{data.map((el: apiResType) => (
+						<>
+							<ImageListItem key={el.Id}>
+								<img
+									src={el.Link}
+									alt={el.Description || el.Title}
+									loading="lazy"
+									onClick={redirect(el.Link)}
+									className={styles.image}
+								></img>
+								<ImageListItemBar
+									title={el.Title}
+									subtitle={el.Place}
+								></ImageListItemBar>
+							</ImageListItem>
+						</>
+					))}
+				</ImageList>
 			</main>
 		</>
 	);
